@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image and Video Analysis</title>
+    <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        margin: 0 auto;
+        height: 750px;
+        /* The height is 400 pixels */
+        width: 80%;
+        /* The width is the width of the web page */
+      }
+      .image_area{
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      .head_{
+        width: 100%
+      }
+      .video {
+        top: 0;
+        width: 100%;
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        const gps_drone = { lat: 21.004468, lng: 105.852966 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: gps_drone,
+        });
+        const marker = new google.maps.Marker({
+          position: gps_drone,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body style="background-color:#305680;"> 
+    <div class="head_">
+      <h3 style="color:rgb(255, 255, 255); font-size: 32px";>Map Tracking Of Drone</h3>
+    </div>
+    <div class="image_area">
+      <img src="logo411vector.png" width="150" height="120" align="right">
+    </div>
+    <div id="map"></div>
+
+    <div class="table-ul" style="color:rgb(255, 255, 255);">
+      <ul class="table-ul-header">
+        <li class="col0" style="font-size: 24px";>Times:</li>
+        <li class="col3 text-center" style="font-size: 24px">Coordinate:</li>
+      </ul>
+    </div>
+    <div class = "video">
+      <iframe width="420" height="345" src="https://www.youtube.com/embed/z0VRyOH_s6I?controls=0"></iframe>
+    <div>
+    
+  </body>
+</html>

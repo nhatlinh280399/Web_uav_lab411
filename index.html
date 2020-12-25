@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image and Video Analysis</title>
+    <script defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        margin: 0 auto;
+        height: 750px;
+        /* The height is 400 pixels */
+        width: 90%;
+        /* The width is the width of the web page */
+      }
+      .image_area{
+        width: 100%;
+      }
+      .head_{
+        width: 100%
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+          const gps_drone = { lat: 21.004468, lng: 105.842966 };
+          const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: gps_drone,
+        });
+        const marker = new google.maps.Marker({
+            position: gps_drone,
+            map: map,
+        });
+  }
+        setInterval(function () {
+            var x = Math.floor(Math.random() * 100000);
+            var y = Math.floor(Math.random() * 100000);
+            document.getElementById("x").innerHTML = x;
+            document.getElementById("y").innerHTML = y;
+        }, 1000);
+
+    </script>
+  </head>
+  <body style="background-color:#305680;" class="container">
+      <div class="left">
+          <div class="head_">
+              <h3 style="color:rgb(255, 255, 255); font-size: 32px";>Map Tracking Of Drone</h3>
+          </div>
+          <div id="map"></div>
+      </div>
+      <div class="right">
+          <div class="image_area">
+              <img src="logo411vector.png" width="180" height="150">
+          </div>
+
+          <table>
+              <tr>
+                  <th style="color:rgb(255, 255, 255);">Latitude</th>
+                  <th style="color:rgb(255, 255, 255);">Longtitude</th>
+              </tr>
+              <tr>
+                  <td id="x" style="color:rgb(255, 255, 255);">1000</td>
+                  <td id="y" style="color:rgb(255, 255, 255);">2000</td>
+              </tr>
+          </table>
+      </div>
+      <!--The div element for the map -->
+      <style>
+          .container{
+              display:flex;
+              justify-content:space-between;
+              align-items:start;
+          }
+           .left{
+               width:90%;
+           }
+           .right{
+               width:10%;
+           }
+          table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100px;
+          }
+          td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+          }
+      </style>
+  </body>
+</html>
